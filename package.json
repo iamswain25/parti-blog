@@ -1,6 +1,7 @@
 {
   "name": "test1",
   "version": "0.1.0",
+  "author": "Swain",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.18",
