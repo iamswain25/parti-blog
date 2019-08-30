@@ -13,7 +13,7 @@ export default () => {
       .then(ref => ref.docs.map(doc => ({ _id: doc.id, ...doc.data() })))
       .then(arr => setCards(arr))
       .finally(setSpinner.bind(null, false));
-  }, []);
+  }, [setSpinner]);
   if (spinnerState) {
     return spinner;
   }
