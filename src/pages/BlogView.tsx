@@ -8,6 +8,7 @@ import Comments from "../components/Comments";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { Paragraph1 } from "baseui/typography";
 import useSpinner from "../components/UseSpinner";
+import { emptyPost, postsDoc } from "../type";
 
 export default (props: RouteComponentProps<{ id: string }>) => {
   const docId = props.match.params.id;
@@ -17,7 +18,7 @@ export default (props: RouteComponentProps<{ id: string }>) => {
       .collection("posts")
       .doc(docId)
       .get()
-      .then(doc => doc.data() || {})
+      .then(doc => doc.data() as postsDoc)
       .then(setForm)
       .finally(setSpinner.bind(null, false));
     firestore
@@ -33,7 +34,7 @@ export default (props: RouteComponentProps<{ id: string }>) => {
       )
       .then(setComment);
   }, [docId, setSpinner]);
-  const [form, setForm] = React.useState<firebase.firestore.DocumentData>({});
+  const [form, setForm] = React.useState(emptyPost);
   const [comment, setComment] = React.useState<
     Array<firebase.firestore.DocumentData>
   >([]);

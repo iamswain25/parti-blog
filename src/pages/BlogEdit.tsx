@@ -6,18 +6,19 @@ import { Block } from "baseui/block";
 import { Input } from "baseui/input";
 import { Spinner } from "baseui/spinner";
 import { Textarea } from "baseui/textarea";
+import { emptyPost, postsDoc } from "../type";
 import { auth, firestore } from "../firebase";
 
 export default (props: RouteComponentProps<{ id: string }>) => {
   const docId = props.match.params.id;
-  const [form, setForm] = React.useState<firebase.firestore.DocumentData>({});
+  const [form, setForm] = React.useState(emptyPost);
   const [spinner, setSpinner] = React.useState(true);
   React.useEffect(() => {
     firestore
       .collection("posts")
       .doc(docId)
       .get()
-      .then(doc => doc.data() || {})
+      .then(doc => doc.data() as postsDoc)
       .then(setForm)
       .finally(setSpinner.bind(null, false));
   }, [docId]);

@@ -6,16 +6,11 @@ import { Input } from "baseui/input";
 import useSpinner from "../components/UseSpinner";
 import { Textarea } from "baseui/textarea";
 import { auth, firestore } from "../firebase";
+import { emptyPost } from "../type";
 
 export default (props: RouteComponentProps) => {
   const [spinnerState, setSpinner, spinner] = useSpinner(false);
-  const [form, setForm] = React.useState({
-    title: "",
-    content: "",
-    userId: "",
-    userName: "",
-    userPhotoURL: ""
-  });
+  const [form, setForm] = React.useState(emptyPost);
   function save() {
     setSpinner(true);
     const { uid, photoURL, displayName } = auth!.currentUser!;
