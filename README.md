@@ -1,5 +1,7 @@
 # Parti Blog
 
+https://iamswain25.github.io/parti-blog/
+
 ## 준비물
 
 ### 구현기간

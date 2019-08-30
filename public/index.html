@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      color="#5bbad5"
+      href="https://parti.xyz/assets/favicons/safari-pinned-tab-bdd41044850ce773f03c54cdc2ffd9d845ed3f24c84ad67471674d48b0565b1c.svg"
+      rel="mask-icon"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -24,7 +28,59 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <meta name="description" content="toy blog" />
+    <meta property="og:description" content="toy blog" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="iamswain25" />
+    <meta name="twitter:description" content="toy blog" />
+    <meta
+      property="og:image"
+      content="https://parti.xyz/assets/parti_seo-dc5714c0e84e3fc23a2168b8e6b89a0bc31773fb1107c3aa7a93cd336bd153a7.png"
+    />
+    <meta property="og:title" content="Parti Blog" />
+    <meta name="twitter:title" content="Parti Blog" />
+    <meta name="author" content="iamswain25" />
+    <title>Parti Blog</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafrex/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search
+            .slice(1)
+            .split("&")
+            .forEach(function(v) {
+              var a = v.split("=");
+              q[a[0]] = a
+                .slice(1)
+                .join("=")
+                .replace(/~and~/g, "&");
+            });
+          if (q.p !== undefined) {
+            window.history.replaceState(
+              null,
+              null,
+              l.pathname.slice(0, -1) +
+                (q.p || "") +
+                (q.q ? "?" + q.q : "") +
+                l.hash
+            );
+          }
+        }
+      })(window.location);
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
