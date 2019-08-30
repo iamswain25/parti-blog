@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { Avatar } from "baseui/avatar";
 import { FormControl } from "baseui/form-control";
 import { Input } from "baseui/input";
@@ -27,6 +28,7 @@ export default () => {
       } else {
         setUser(null);
       }
+      setIsOpen(false);
     });
     return unsubscribe;
   }, []);
@@ -56,6 +58,11 @@ export default () => {
     return (
       <>
         <NavigationItem>
+          <Link to="post">
+            <Button>글 쓰기</Button>
+          </Link>
+        </NavigationItem>
+        <NavigationItem>
           <ButtonGroup>
             <Button onClick={() => setIsOpen(true)}>
               <Avatar
@@ -84,7 +91,13 @@ export default () => {
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <ModalButton onClick={() => auth!.currentUser!.delete()}>
+            <ModalButton
+              onClick={() =>
+                auth!
+                  .currentUser!.delete()
+                  .catch(({ message }) => alert(message))
+              }
+            >
               계정삭제
             </ModalButton>
             <ModalButton onClick={modalCloseHandler}>취소</ModalButton>
@@ -100,6 +113,7 @@ export default () => {
                     .then(() => alert("변경되었습니다."))
                     .then(() => setDisabled(true))
                     .then(() => setIsOpen(false))
+                    .catch(alert)
                 }
               >
                 변경

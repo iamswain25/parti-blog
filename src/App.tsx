@@ -5,6 +5,9 @@ import { Provider as StyletronProvider } from "styletron-react";
 import { LightTheme, BaseProvider } from "baseui";
 import Header from "./components/Header";
 import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
+import BlogView from "./pages/BlogView";
+import BlogEdit from "./pages/BlogEdit";
 const engine = new Styletron();
 
 const App: React.FC = () => {
@@ -21,6 +24,9 @@ const App: React.FC = () => {
             <Route path="/" component={Header} />
             <Switch>
               <Route path="/" exact component={BlogList} />
+              <Route path="/post" exact component={BlogPost} />
+              <Route path="/post/:id" exact component={BlogView} />
+              <Route path="/edit/:id" exact component={BlogEdit} />
             </Switch>
           </BaseProvider>
         </StyletronProvider>
