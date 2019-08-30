@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/parti-blog/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/parti-blog/static/js/main.53e254bb.chunk.js",
+    "main.js.map": "/parti-blog/static/js/main.53e254bb.chunk.js.map",
+    "runtime~main.js": "/parti-blog/static/js/runtime~main.da776406.js",
+    "runtime~main.js.map": "/parti-blog/static/js/runtime~main.da776406.js.map",
+    "static/css/2.ec9d628c.chunk.css": "/parti-blog/static/css/2.ec9d628c.chunk.css",
+    "static/js/2.09c9617d.chunk.js": "/parti-blog/static/js/2.09c9617d.chunk.js",
+    "static/js/2.09c9617d.chunk.js.map": "/parti-blog/static/js/2.09c9617d.chunk.js.map",
+    "index.html": "/parti-blog/index.html",
+    "precache-manifest.ca8edbf33fc5cae645784f403570d5c2.js": "/parti-blog/precache-manifest.ca8edbf33fc5cae645784f403570d5c2.js",
+    "service-worker.js": "/parti-blog/service-worker.js",
+    "static/css/2.ec9d628c.chunk.css.map": "/parti-blog/static/css/2.ec9d628c.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/parti-blog/static/css/main.5ecd60fb.chunk.css.map",
+    "static/media/semantic.min.css": "/parti-blog/static/media/outline-icons.ef60a4f6.woff"
+  }
+}
