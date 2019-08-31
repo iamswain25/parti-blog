@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/parti-blog/precache-manifest.98ddf7974c4443fff9e2cf0ae6612180.js"
+  "/parti-blog/precache-manifest.bcd4169d838d61fba7a23a849d3d4261.js"
 );
 
 self.addEventListener('message', (event) => {
