@@ -9,14 +9,3 @@ export interface postsDoc {
   createdAt: firebase.firestore.Timestamp;
   updatedAt: firebase.firestore.Timestamp;
 }
-
-export const emptyPost: postsDoc = {
-  title: "",
-  content: "",
-  userId: "",
-  userName: "",
-  userPhotoURL: "",
-  commentCount: 0,
-  createdAt: new firebase.firestore.Timestamp(),
-  updatedAt: new firebase.firestore.Timestamp()
-};

@@ -23,7 +23,7 @@ export default () => {
         <ul key={c._id}>
           <li>
             <Link to={`post/${c._id}`}>{c.title}</Link>
-            {c.commentCount ? `(c.commentCount)` : ""}
+            {c.commentCount ? ` (${c.commentCount}개의 댓글)` : ""}
             <i style={{ marginLeft: 10 }}>
               -{c.createdAt.toDate().toLocaleString("ko")}
             </i>

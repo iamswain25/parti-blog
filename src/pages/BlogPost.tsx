@@ -6,7 +6,7 @@ import { Input } from "baseui/input";
 import useSpinner from "../components/UseSpinner";
 import { Textarea } from "baseui/textarea";
 import { auth, firestore } from "../firebase";
-import { emptyPost } from "../type";
+import { emptyPost } from "../@types/type";
 
 export default (props: RouteComponentProps) => {
   const [spinnerState, setSpinner, spinner] = useSpinner(false);

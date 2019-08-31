@@ -6,7 +6,8 @@ import { Block } from "baseui/block";
 import { Input } from "baseui/input";
 import { Spinner } from "baseui/spinner";
 import { Textarea } from "baseui/textarea";
-import { emptyPost, postsDoc } from "../type";
+import { emptyPost } from "../@types/type";
+import { postsDoc } from "../@types";
 import { auth, firestore } from "../firebase";
 
 export default (props: RouteComponentProps<{ id: string }>) => {

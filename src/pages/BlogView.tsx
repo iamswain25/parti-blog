@@ -8,39 +8,43 @@ import Comments from "../components/Comments";
 import { Heading, HeadingLevel } from "baseui/heading";
 import { Paragraph1 } from "baseui/typography";
 import useSpinner from "../components/UseSpinner";
-import { emptyPost, postsDoc } from "../type";
+import { emptyPost } from "../@types/type";
+import { postsDoc } from "../@types";
 
 export default (props: RouteComponentProps<{ id: string }>) => {
   const docId = props.match.params.id;
   const [spinnerState, setSpinner, spinner] = useSpinner(true);
   React.useEffect(() => {
-    firestore
-      .collection("posts")
-      .doc(docId)
-      .get()
-      .then(doc => doc.data() as postsDoc)
-      .then(setForm)
-      .finally(setSpinner.bind(null, false));
-    firestore
+    const unsubs = firestore
       .collection("posts")
       .doc(docId)
       .collection("comments")
-      .get()
-      .then(colR =>
-        colR.docs.map(d => ({
-          _id: d.id,
-          ...d.data()
-        }))
-      )
-      .then(setComment);
+      .orderBy("createdAt", "asc")
+      .onSnapshot(colR =>
+        setComment(
+          colR.docs.map(d => ({
+            _id: d.id,
+            ...d.data()
+          }))
+        )
+      );
+    Promise.all([
+      firestore
+        .collection("posts")
+        .doc(docId)
+        .get()
+        .then(doc => doc.data() as postsDoc)
+        .then(setForm)
+    ]).then(() => setSpinner(false));
+    // .finally(() => console.log(form));
+    return unsubs;
+    // .finally();
   }, [docId, setSpinner]);
   const [form, setForm] = React.useState(emptyPost);
   const [comment, setComment] = React.useState<
     Array<firebase.firestore.DocumentData>
   >([]);
-  if (spinnerState) {
-    return spinner;
-  }
+  console.log(form);
   return (
     <>
       <HeadingLevel>
@@ -61,7 +65,8 @@ export default (props: RouteComponentProps<{ id: string }>) => {
           <Button>수정</Button>
         </Link>
       )}
-      <Comments comments={comment} />
+      <Comments comments={comment} docId={docId} setSpinner={setSpinner} />
+      {spinnerState && spinner}
     </>
   );
 };
