@@ -49,6 +49,9 @@ export default (props: {
     setCommEdit("");
     setEdit(false);
   }
+  function removeComment(id: string) {
+    firestore.doc(`posts/${props.docId}/comments/${id}`).delete();
+  }
   return (
     <Comment.Group size="large">
       <Header as="h3" dividing>
@@ -65,15 +68,27 @@ export default (props: {
             {auth.currentUser &&
               c.userId === auth.currentUser!.uid &&
               edit === false && (
-                <Button
-                  onClick={event => {
-                    setEdit(c._id);
-                    setCommEdit(c.content);
-                    // inputRef.current!.focus();
-                  }}
-                  content="수정"
-                  floated="right"
-                />
+                <>
+                  <Button
+                    onClick={event => {
+                      setEdit(c._id);
+                      setCommEdit(c.content);
+                      // inputRef.current!.focus();
+                    }}
+                    content="수정"
+                    floated="right"
+                  />
+                  <Button
+                    onClick={event => {
+                      if (window.confirm("삭제하시겠습니까?")) {
+                        removeComment(c._id);
+                      }
+                    }}
+                    secondary
+                    content="삭제"
+                    floated="right"
+                  />
+                </>
               )}
             {edit === c._id ? (
               <Form>
