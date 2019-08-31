@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aec5255eb7aa74fb20a2eeeb6ad618e9",
+    "revision": "0cac2e7a4e2ea7b8f1e72407e7786d44",
     "url": "/parti-blog/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/parti-blog/static/css/2.ec9d628c.chunk.css"
   },
   {
-    "revision": "6c3b43b3055ecab0ed8b",
+    "revision": "e0b24d2e186bee183490",
     "url": "/parti-blog/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/parti-blog/static/js/2.206685d7.chunk.js"
   },
   {
-    "revision": "6c3b43b3055ecab0ed8b",
-    "url": "/parti-blog/static/js/main.c0ee2604.chunk.js"
+    "revision": "e0b24d2e186bee183490",
+    "url": "/parti-blog/static/js/main.5415a967.chunk.js"
   },
   {
     "revision": "a2184f674a225a19346f",
