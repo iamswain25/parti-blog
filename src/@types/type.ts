@@ -7,6 +7,7 @@ export const emptyPost: postsDoc = {
   userName: "",
   userPhotoURL: "",
   commentCount: 0,
+  likeCount: 0,
   createdAt: firebase.firestore.Timestamp.now(),
   updatedAt: firebase.firestore.Timestamp.now()
 };

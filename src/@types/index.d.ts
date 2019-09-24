@@ -6,6 +6,7 @@ export interface postsDoc {
   userName: string;
   userPhotoURL: string;
   commentCount: number;
+  likeCount: number;
   createdAt: firebase.firestore.Timestamp;
   updatedAt: firebase.firestore.Timestamp;
 }
