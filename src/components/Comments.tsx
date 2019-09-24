@@ -51,6 +51,9 @@ export default (props: {
   }
   function removeComment(id: string) {
     firestore.doc(`posts/${props.docId}/comments/${id}`).delete();
+    firestore
+      .doc(`posts/${props.docId}`)
+      .update({ commentCount: firebase.firestore.FieldValue.increment(-1) });
   }
   return (
     <Comment.Group size="large">
